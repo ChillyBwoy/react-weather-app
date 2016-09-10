@@ -1,6 +1,17 @@
 import { fromJS } from 'immutable';
 
-export default function rootReducer (state, action) {
+const INITIAL_STATE = fromJS({
+  location: '',
+  data: {},
+  dates: [],
+  temps: [],
+  selected: {
+    date: '',
+    temp: null
+  }
+});
+
+export default function rootReducer (state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'CHANGE_LOCATION':
       return state.set('location', action.location);

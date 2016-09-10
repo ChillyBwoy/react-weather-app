@@ -12,7 +12,7 @@ import {
   setSelectedDate
 } from './actions';
 
-class App extends Component {
+export class App extends Component {
   onPlotClick = (data) => {
     if (data.points) {
       let num = data.points[0].pointNumber;
